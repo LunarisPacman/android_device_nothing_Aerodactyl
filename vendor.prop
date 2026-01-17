@@ -314,3 +314,7 @@ zygote.critical_window.minute=10
 # Maintainer
 TwistedVis
 
+
+# SurfaceFlinger Optimization
+debug.sf.disable_backpressure=1
+debug.sf.latch_unsignaled=1
