@@ -109,6 +109,9 @@ PRODUCT_COPY_FILES += \
 PRODUCT_CHARACTERISTICS := nosdcard
 
 # Display
+$(call soong_config_set,surfaceflinger,frame_rate_category_high,120)
+$(call soong_config_set,surfaceflinger,frame_rate_category_min,60)
+
 PRODUCT_PACKAGES += \
     android.hardware.memtrack-service.mediatek
 
@@ -415,3 +418,7 @@ PRODUCT_COPY_FILES += \
 
 # Inherit the proprietary files
 $(call inherit-product, vendor/nothing/Aerodactyl/Aerodactyl-vendor.mk)
+
+# Maintainer
+PRODUCT_SYSTEM_PROPERTIES += \
+    ro.lunaris.maintainer=TwistedVis
