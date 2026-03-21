@@ -108,12 +108,12 @@ ndk::ScopedAStatus Vibrator::perform(Effect effect, EffectStrength es,
 
     switch (effect) {
         case Effect::CLICK:
+        case Effect::POP:
         case Effect::DOUBLE_CLICK:
         case Effect::TICK:
         case Effect::THUD:
-        case Effect::POP:
         case Effect::HEAVY_CLICK:
-            effectId = 12295;
+            effectId = 12295; // Standard RichTap Click
             break;
         case Effect::TEXTURE_TICK:
             effectId = 12296;
