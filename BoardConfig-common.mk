@@ -124,6 +124,9 @@ BOARD_FLASH_BLOCK_SIZE := $(BOARD_KERNEL_PAGESIZE)
 BOARD_INIT_BOOT_IMAGE_PARTITION_SIZE := $(BOARD_DTBOIMG_PARTITION_SIZE)
 BOARD_VENDOR_BOOTIMAGE_PARTITION_SIZE := $(BOARD_BOOTIMAGE_PARTITION_SIZE)
 
+# Ensure System/Product are explicitly defined to prevent dumpvars fatal error during lunch
+PRODUCT_SYSTEM_PARTITIONS_FILE_SYSTEM_TYPE := ext4
+
 ifeq ($(PRODUCT_SYSTEM_PARTITIONS_FILE_SYSTEM_TYPE),ext4)
 -include vendor/lineage/config/BoardConfigReservedSize.mk
 endif
