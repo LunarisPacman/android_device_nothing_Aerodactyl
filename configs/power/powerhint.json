@@ -404,6 +404,12 @@
       "Value": "1"
     },
     {
+      "PowerHint": "INTERACTION",
+      "Node": "GpuPwrLevel",
+      "Duration": 1500,
+      "Value": "10"
+    },
+    {
       "PowerHint": "LAUNCH",
       "Node": "PMQoSCpuDmaLatency",
       "Duration": 1000,
