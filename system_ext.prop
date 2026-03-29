@@ -40,3 +40,9 @@ ro.build.nothing.feature.diff.product.PacmanProIND=0x10000000000000000000000L
 wifi.direct.interface=p2p0
 wifi.interface=wlan0
 wifi.tethering.interface=ap0
+
+# Bluetooth Codecs
+persist.vendor.bt.a2dp.hal.implementation=true
+persist.bluetooth.sbc_hd_higher_priority=1
+persist.bluetooth.ldac_hq_prioritized=true
+persist.bluetooth.lhdc_prioritized=true
