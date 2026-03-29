@@ -122,12 +122,10 @@ ndk::ScopedAStatus Vibrator::perform(Effect effect, EffectStrength es,
             return ndk::ScopedAStatus(AStatus_fromExceptionCode(EX_UNSUPPORTED_OPERATION));
     }
 
-    if (sLastMode == MODE_STREAM)
-        aac_vibra_setAmplitude(0xFF);
-
     int32_t ret = aac_vibra_looper_prebaked_effect(effectId, strength);
     if (ret < 0) {
-        ALOGE("AAC perform failed: %d\n", ret);
+        ALOGE("AAC perform failed: %d
+", ret);
         return ndk::ScopedAStatus(AStatus_fromExceptionCode(EX_SERVICE_SPECIFIC));
     }
 
@@ -135,12 +133,10 @@ ndk::ScopedAStatus Vibrator::perform(Effect effect, EffectStrength es,
         std::thread([=] {
             usleep((ret + 15) * 1000);
             if (effect == Effect::DOUBLE_CLICK) {
-<<<<<<< HEAD
-                usleep(20 * 1000);
-=======
-                usleep((ret + 10) * 1000);
->>>>>>> 8944529 (Aerodactyl: Import optimizations from PixelOS)
-                aac_vibra_looper_prebaked_effect(effectId, strength);
+                int32_t secondRet = aac_vibra_looper_prebaked_effect(effectId, strength);
+                if (secondRet > 0) {
+                    usleep((secondRet + 10) * 1000);
+                }
             }
             callback->onComplete();
         }).detach();
