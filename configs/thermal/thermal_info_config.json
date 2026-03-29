@@ -52,14 +52,14 @@
             "Type": "SKIN",
             "HotThreshold": [
                 "NaN",
-                40.0,
+                39.0,
+                43.0,
                 44.0,
-                45.0,
                 50.0,
                 54.0,
                 63.0
             ],
-            "VrThreshold": "40.0",
+            "VrThreshold": "39.0",
             "Multiplier": 0.001
         },
         {
