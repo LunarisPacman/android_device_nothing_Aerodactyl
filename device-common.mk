@@ -7,6 +7,10 @@
 $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit_only.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 
+# Define this before the first conditional so lunch/dumpvars has a stable default
+# while product makefiles are being parsed.
+PRODUCT_SYSTEM_PARTITIONS_FILE_SYSTEM_TYPE ?= ext4
+
 # A/B
 ifeq ($(PRODUCT_SYSTEM_PARTITIONS_FILE_SYSTEM_TYPE),ext4)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/virtual_ab_ota/launch_with_vendor_ramdisk.mk)
@@ -18,14 +22,6 @@ endif
 
 WITH_DEXPREOPT := true
 WITH_DEXPREOPT_BOOT_IMG_AND_SYSTEM_SERVER_ONLY := false
-
-ifeq ($(PRODUCT_SYSTEM_PARTITIONS_FILE_SYSTEM_TYPE),ext4)
-$(call inherit-product, $(SRC_TARGET_DIR)/product/virtual_ab_ota/launch_with_vendor_ramdisk.mk)
-else
-$(call inherit-product, $(SRC_TARGET_DIR)/product/virtual_ab_ota/vabc_features.mk)
-PRODUCT_VIRTUAL_AB_COMPRESSION_METHOD := lz4
-PRODUCT_VENDOR_PROPERTIES += ro.virtual_ab.compression.threads=true
-endif
 
 AB_OTA_POSTINSTALL_CONFIG += \
     RUN_POSTINSTALL_system=true \
