@@ -154,6 +154,12 @@ PRODUCT_PACKAGES += \
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.fingerprint.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.fingerprint.xml
 
+# Face unlock
+# CameraX front-camera selection can be unreliable on this device family. Pin SenseService to the
+# known selfie camera ID used by the device camera overlays.
+PRODUCT_SYSTEM_EXT_PROPERTIES += \
+    ro.face.sense_service.camera_id=1
+
 # Gatekeeper
 PRODUCT_PACKAGES += \
     android.hardware.gatekeeper@1.0-impl \
