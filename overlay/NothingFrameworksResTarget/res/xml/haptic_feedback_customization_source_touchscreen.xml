@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     SPDX-FileCopyrightText: The Lunaris Project
+     SPDX-License-Identifier: Apache-2.0
+-->
+<haptic-feedback-constants>
+    <!-- Route dense touch interactions through the softer texture pattern so
+         scrolling and segmented controls feel cleaner instead of clicky. -->
+    <constant id="18">
+        <vibration-effect>
+            <predefined-effect name="texture_tick"/>
+        </vibration-effect>
+    </constant>
+    <constant id="26">
+        <vibration-effect>
+            <predefined-effect name="texture_tick"/>
+        </vibration-effect>
+    </constant>
+</haptic-feedback-constants>

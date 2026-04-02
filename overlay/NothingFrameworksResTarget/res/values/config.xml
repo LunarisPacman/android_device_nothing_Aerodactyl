@@ -9,6 +9,13 @@
          available on some devices. -->
     <bool name="config_enableHapticTextHandle">true</bool>
 
+    <!-- Keep the default haptic profile balanced so touch feedback stays crisp
+         without pushing notification, ring, or keyboard vibration too far. -->
+    <integer name="config_defaultHapticFeedbackIntensity">2</integer>
+    <integer name="config_defaultNotificationVibrationIntensity">2</integer>
+    <integer name="config_defaultRingVibrationIntensity">2</integer>
+    <integer name="config_defaultKeyboardVibrationIntensity">2</integer>
+
     <!-- Flag indicating whether we should enable the automatic brightness.
          Software implementation will be used if config_hardware_auto_brightness_available is not set -->
     <bool name="config_automatic_brightness_available">true</bool>
@@ -397,20 +404,10 @@
     <!-- If face auth sends the user directly to home/last open app, or stays on keyguard -->
     <bool name="config_faceAuthDismissesKeyguard">false</bool>
 
-    <!-- The list of packages to automatically opt in to refresh rate suppressing by small area
-    detection. Format of this array should be packageName:threshold and threshold value should
-     be between 0 to 1-->
+    <!-- Keep small-area detection disabled by default. On Aerodactyl it tends to trade
+         smoothness for power savings in common social and media apps, which can show up as
+         visible jitter when the display hops between refresh modes during transitions. -->
     <string-array name="config_smallAreaDetectionAllowlist" translatable="false">
-        <!-- Add packages:threshold here -->
-        <item>com.tencent.mm:0.07</item>
-        <item>com.facebook.katana:0.07</item>
-        <item>com.instagram.android:0.07</item>
-        <item>com.spotify.music:0.05</item>
-        <item>com.reddit.frontpage:0.07</item>
-        <item>com.zhiliaoapp.musically:0.07</item>
-        <item>com.bilibili.app.in:0.07</item>
-        <item>com.twitter.android:0.07</item>
-        <item>com.google.android.youtube:0.07</item>
     </string-array>
 
     <!-- Whether or not wcg (wide color gamut) should be enabled on this device,
@@ -424,9 +421,8 @@
          fp screen off unlock-->
     <bool name="config_screen_off_udfps_default_on">true</bool>
 
-    <!-- Whether WM DisplayContent supports high performance transitions
-         (lower-end devices may want to disable) -->
-    <bool name="config_deviceSupportsHighPerfTransitions">false</bool>
+    <!-- Aerodactyl is capable enough to prefer the higher performance transition path. -->
+    <bool name="config_deviceSupportsHighPerfTransitions">true</bool>
 
     <!-- If this is true, the screen will come on when you unplug usb/power/whatever. -->
     <bool name="config_unplugTurnsOnScreen">true</bool>
