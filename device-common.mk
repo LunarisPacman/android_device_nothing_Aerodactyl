@@ -6,6 +6,7 @@
 # Inherit from those products. Most specific first.
 $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit_only.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
+$(call inherit-product, packages/apps/ViPER4AndroidFX/config.mk)
 
 # Define this before the first conditional so lunch/dumpvars has a stable default
 # while product makefiles are being parsed.

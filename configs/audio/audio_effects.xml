@@ -27,6 +27,7 @@
         <!-- add for dirac support -->
         <library name="dirac" path="libdiraceffect_NT.so"/>
         <!-- add for dirac support -->
+        <library name="v4a_re" path="libv4a_re.so"/>
     </libraries>
 
     <!-- list of effects to load.
@@ -72,6 +73,7 @@
         <!-- add for dirac support -->
         <effect name="dirac" library="dirac" uuid="ae737c63-f2c0-5457-909e-1e940c91b67b"/>
         <!-- add for dirac support -->
+        <effect name="v4a_standard_re" library="v4a_re" uuid="90380da3-8536-4744-a6a3-5731970e640f"/>
     </effects>
 
     <!-- Audio pre processor configurations.
