@@ -13,9 +13,9 @@
 
 #include "aac_vibra_function.h"
 
-#define RICHTAP_LIGHT_STRENGTH 77
-#define RICHTAP_MEDIUM_STRENGTH 88
-#define RICHTAP_STRONG_STRENGTH 100
+#define RICHTAP_LIGHT_STRENGTH 25
+#define RICHTAP_MEDIUM_STRENGTH 45
+#define RICHTAP_STRONG_STRENGTH 77
 
 enum vibrationMode {
     MODE_NONE,
@@ -133,9 +133,9 @@ ndk::ScopedAStatus Vibrator::perform(Effect effect, EffectStrength es,
 
     if (callback != nullptr) {
         std::thread([=] {
-            usleep((ret + 15) * 1000);
+            usleep((ret + 10) * 1000);
             if (effect == Effect::DOUBLE_CLICK) {
-                usleep((ret + 10) * 1000);
+                usleep((ret + 5) * 1000);
                 int32_t secondRet = aac_vibra_looper_prebaked_effect(effectId, strength);
                 if (secondRet > 0) {
                     usleep((secondRet + 10) * 1000);
