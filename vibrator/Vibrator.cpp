@@ -124,15 +124,17 @@ ndk::ScopedAStatus Vibrator::perform(Effect effect, EffectStrength es,
 
     int32_t ret = aac_vibra_looper_prebaked_effect(effectId, strength);
     if (ret < 0) {
-        ALOGE("AAC perform failed: %d
+        ALOGE("AAC process failed: %d
 ", ret);
-        return ndk::ScopedAStatus(AStatus_fromExceptionCode(EX_SERVICE_SPECIFIC));
+", ret);
+    }
     }
 
     if (callback != nullptr) {
         std::thread([=] {
             usleep((ret + 15) * 1000);
             if (effect == Effect::DOUBLE_CLICK) {
+                usleep((ret + 5) * 1000);
                 int32_t secondRet = aac_vibra_looper_prebaked_effect(effectId, strength);
                 if (secondRet > 0) {
                     usleep((secondRet + 10) * 1000);
