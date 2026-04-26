@@ -429,20 +429,10 @@
     <!-- If face auth sends the user directly to home/last open app, or stays on keyguard -->
     <bool name="config_faceAuthDismissesKeyguard">false</bool>
 
-    <!-- The list of packages to automatically opt in to refresh rate suppressing by small area
-    detection. Format of this array should be packageName:threshold and threshold value should
-     be between 0 to 1-->
+    <!-- Keep small-area detection disabled by default. On Aerodactyl it tends to trade
+         smoothness for power savings in common social and media apps, which can show up as
+         visible jitter when the display hops between refresh modes during transitions. -->
     <string-array name="config_smallAreaDetectionAllowlist" translatable="false">
-        <!-- Add packages:threshold here -->
-        <item>com.tencent.mm:0.07</item>
-        <item>com.facebook.katana:0.07</item>
-        <item>com.instagram.android:0.07</item>
-        <item>com.spotify.music:0.05</item>
-        <item>com.reddit.frontpage:0.07</item>
-        <item>com.zhiliaoapp.musically:0.07</item>
-        <item>com.bilibili.app.in:0.07</item>
-        <item>com.twitter.android:0.07</item>
-        <item>com.google.android.youtube:0.07</item>
     </string-array>
 
     <!-- Whether or not wcg (wide color gamut) should be enabled on this device,
@@ -451,7 +441,6 @@
 
     <!-- Whether WM DisplayContent supports high performance transitions
          (lower-end devices may want to disable) -->
-    <bool name="config_deviceSupportsHighPerfTransitions">false</bool>
 
     <!-- Whether to enable fp unlock when screen turns off on udfps devices -->
     <bool name="config_screen_off_udfps_enabled">true</bool>
@@ -459,4 +448,35 @@
     <!-- Default value for fp screen off unlock toggle, it only works for the devices that support
          fp screen off unlock-->
     <bool name="config_screen_off_udfps_default_on">true</bool>
+<<<<<<< HEAD
+=======
+
+    <!-- Aerodactyl is capable enough to prefer the higher performance transition path. -->
+    <bool name="config_deviceSupportsHighPerfTransitions">true</bool>
+
+    <!-- If this is true, the screen will come on when you unplug usb/power/whatever. -->
+    <bool name="config_unplugTurnsOnScreen">true</bool>
+
+    <!-- Whether a software navigation bar should be shown. NOTE: in the future this may be
+         autodetected from the Configuration. -->
+    <bool name="config_showNavigationBar">true</bool>
+
+    <!-- Whether WiFi display is supported by this device.
+         There are many prerequisites for this feature to work correctly.
+         Here are a few of them:
+         * The WiFi radio must support WiFi P2P.
+         * The WiFi radio must support concurrent connections to the WiFi display and
+           to an access point.
+         * The Audio Server audio_policy_configuration.xml file must specify a rule for
+           the "r_submix" remote submix module.  This module is used to record and stream system
+           audio output to the WiFi display encoder in the media server.
+         * The remote submix module "audio.r_submix.default" must be installed on the device.
+         * The device must be provisioned with HDCP keys (for protected content).
+    -->
+    <bool name="config_enableWifiDisplay">true</bool>
+
+    <!-- When true use the linux /dev/input/event subsystem to detect the switch changes
+         on the headphone/microphone jack. When false use the older uevent framework. -->
+    <bool name="config_useDevInputEventForAudioJack">true</bool>
+>>>>>>> de4534c (Aerodactyl: Prefer high-perf display transitions)
 </resources>
