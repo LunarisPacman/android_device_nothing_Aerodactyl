@@ -9,6 +9,13 @@
          available on some devices. -->
     <bool name="config_enableHapticTextHandle">true</bool>
 
+    <!-- Keep the default haptic profile balanced so touch feedback stays crisp
+         without pushing notification, ring, or keyboard vibration too far. -->
+    <integer name="config_defaultHapticFeedbackIntensity">2</integer>
+    <integer name="config_defaultNotificationVibrationIntensity">2</integer>
+    <integer name="config_defaultRingVibrationIntensity">2</integer>
+    <integer name="config_defaultKeyboardVibrationIntensity">2</integer>
+
     <!-- Flag indicating whether we should enable the automatic brightness.
          Software implementation will be used if config_hardware_auto_brightness_available is not set -->
     <bool name="config_automatic_brightness_available">true</bool>
