@@ -352,55 +352,55 @@
     {
       "PowerHint": "INTERACTION",
       "Node": "CPUSuperClusterMinFreq",
-      "Duration": 1500,
+      "Duration": 200,
       "Value": "1700000"
     },
     {
       "PowerHint": "INTERACTION",
       "Node": "CPUSuperClusterMaxFreq",
-      "Duration": 1500,
+      "Duration": 200,
       "Value": "2800000"
     },
     {
       "PowerHint": "INTERACTION",
       "Node": "CPUEfficiencyClusterMinFreq",
-      "Duration": 1500,
+      "Duration": 200,
       "Value": "1500000"
     },
     {
       "PowerHint": "INTERACTION",
       "Node": "CPUEfficiencyClusterMaxFreq",
-      "Duration": 1500,
+      "Duration": 200,
       "Value": "2000000"
     },
     {
       "PowerHint": "INTERACTION",
       "Node": "MemFreq",
-      "Duration": 1500,
+      "Duration": 200,
       "Value": "4266000000"
     },
     {
       "PowerHint": "INTERACTION",
       "Node": "CciFreq",
-      "Duration": 1500,
+      "Duration": 200,
       "Value": "1"
     },
     {
       "PowerHint": "INTERACTION",
       "Node": "UclampFGMin",
-      "Duration": 3000,
+      "Duration": 200,
       "Value": "30"
     },
     {
       "PowerHint": "INTERACTION",
       "Node": "UclampTAMin",
-      "Duration": 5000,
+      "Duration": 200,
       "Value": "60"
     },
     {
       "PowerHint": "INTERACTION",
       "Node": "UclampTALatency",
-      "Duration": 5000,
+      "Duration": 200,
       "Value": "1"
     },
     {
