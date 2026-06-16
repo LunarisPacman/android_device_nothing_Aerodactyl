@@ -497,7 +497,7 @@
       "PowerHint": "EXPENSIVE_RENDERING",
       "Node": "GpuPwrLevel",
       "Duration": 0,
-      "Value": "22"
+      "Value": "0"
     },
     {
       "PowerHint": "EXPENSIVE_RENDERING",
