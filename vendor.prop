@@ -59,6 +59,7 @@ vendor.camera.mdp.cz.enable=1
 vendor.camera.mdp.dre.enable=1
 vendor.debug.morpho.videoeis.enable=true
 vendor.debug.morpho.zoomeis.enable=true
+vendor.camera.aux.packageexcludelist=com.adobe.scan.android,com.tencent.mm,us.zoom.videomeetings,in.org.npci.upiapp
 
 # Crypto
 ro.crypto.volume.options=aes-256-xts:aes-256-hctr2
