@@ -99,6 +99,8 @@ TARGET_SCREEN_HEIGHT := 2412
 TARGET_SCREEN_WIDTH := 1084
 
 # Camera
+TARGET_BUILD_DEVICE_AS_WEBCAM := true
+
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.camera.concurrent.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.camera.concurrent.xml \
     frameworks/native/data/etc/android.hardware.camera.flash-autofocus.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.camera.flash-autofocus.xml \
@@ -281,6 +283,7 @@ PRODUCT_PACKAGES += \
     NothingSystemUIResTarget
 
 PRODUCT_PACKAGES += \
+    DeviceAsWebcamResTarget \
     NcmTetheringOverlay
 
 PRODUCT_PACKAGES += \

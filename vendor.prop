@@ -309,9 +309,8 @@ ro.vendor.mtk_trustonic_tee_support=1
 ro.vendor.mtk_thermal_2_0=1
 
 # USB
+ro.usb.uvc.enabled=true
 vendor.usb.controller=11201000.usb0
-
-# Wifi
 ro.vendor.wifi.sap.concurrent.iface=ap1
 ro.vendor.wifi.sap.interface=ap0
 ro.vendor.wlan.chrdev=wmt_chrdev_wifi_connac2
