@@ -21,6 +21,13 @@ WITH_GMS := true
 #blur
 TARGET_ENABLE_BLUR := true
 
+#bcr
+
+WITH_BCR := true
+
+#advanced display
+
+USE_ADVANCED_DISPLAY_COLOR := true
 
 LUNARIS_BUILD_TYPE := OFFICIAL
 
